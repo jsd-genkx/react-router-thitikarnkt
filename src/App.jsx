@@ -5,6 +5,10 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
+import Profile from './pages/Profile';
+import Profileinfo from './pages/Profileinfo';
+import Orders from './pages/Orders';
+import Settings from './pages/Setting';
 
 export default function App() {
   return (
@@ -17,6 +21,11 @@ export default function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/products' element={<ProductList/>} />
           <Route path='/products/:id' element={<ProductDetail/>} />
+          <Route path='/profile' element={<Profile/>}>
+            <Route path='info' element={<Profileinfo/>}/>
+            <Route path='orders' element={<Orders/>}/>
+            <Route path='settings' element={<Settings/>}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
