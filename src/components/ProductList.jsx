@@ -1,0 +1,26 @@
+import { Link } from "react-router-dom";
+
+const products = [
+    { id: 1, name: 'Product 1'},
+    { id: 2, name: 'Product 2'},
+    { id: 3, name: 'Product 3'}
+];
+
+export default function ProductList() {
+    return (
+        <div>
+            <h1 className="text-3xl font-bold underline">
+                Product List
+            </h1>
+            <ul> 
+                {products.map((product) => (
+                    <li key={product.id}>
+                        <Link to={`/products/${product.id}`}>{product.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+// ได้ url จากการ .map น้าจ้า
